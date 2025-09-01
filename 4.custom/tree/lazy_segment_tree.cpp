@@ -17,11 +17,10 @@ void push(int id, int l, int r) {
         st[id] += lazy[id];
         /*
         When update min/max: st[id] += lazy[id];
-        When update sum: st[id] += lazy[id] * (r - l + 1);
-        With sum at get:
-        (+) st[id] += (r - l + 1) * x;
-        (*) st[id] *= x;
-        (=) st[id] = (r - l + 1) * x;
+        When update sum:
+        - Increase by x: st[id] += (r - l + 1) * x;
+        - Multiply by x: st[id] *= x;
+        - Assign by x: st[id] = (r - l + 1) * x;
         */
         if (l != r) {
             lazy[id << 1] += lazy[id];
