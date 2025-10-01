@@ -5,13 +5,19 @@
 
 using namespace std;
 
-mt19937 rd(chrono::steady_clock::now().time_since_epoch().count());
-int n = 1 + rd() % 2000000;
-int m = 1 + rd() % 2000000;
+const ll arr = 1e6 + 6, mod = 1e9, inf = LLONG_MIN;
 
 int main()
 {
     ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-    cout << n << " " << m;
+    int n;
+    cin >> n;
+    ll cnt = 0;
+    while (n--){
+        ll a, b;
+        cin >> a >> b;
+        if (b - a >= 2) cnt++;
+    }
+    cout << cnt;
     return 0;
 }
