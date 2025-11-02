@@ -25,11 +25,11 @@
 			"",
 			"using namespace std;",
 			"",
-			"const ll arr = 1e6 + 6, mod = 1e9, inf = LLONG_MIN;",
+			"const ll arr = 1e6 + 6, mod = 1e9 + 7;",
 			"",
 			"int main()",
 			"{",
-			"    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);",
+			"    ios::sync_with_stdio(0), cin.tie(0);",
 			"    ",
 			"    return 0;",
 			"}"
@@ -40,10 +40,10 @@
 		"prefix": "freopen",
 		"body": [
 			"if (fopen(\".inp\",\"r\"))",
-			"    {",
-			"        freopen(\".inp\", \"r\", stdin);",
-			"        freopen(\".out\", \"w\", stdout);",
-			"    }"
+			"{",
+			"    freopen(\".inp\", \"r\", stdin);",
+			"    freopen(\".out\", \"w\", stdout);",
+			"}"
 		],
 		"description": "In-Out with file"
 	}
