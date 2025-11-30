@@ -37,7 +37,7 @@
 		"description": "Code Template"
 	},
 	"In-Out with file": {
-		"prefix": "freopen",
+		"prefix": "file",
 		"body": [
 			"if (fopen(\".inp\",\"r\"))",
 			"{",
