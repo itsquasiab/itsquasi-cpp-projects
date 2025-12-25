@@ -1,12 +1,12 @@
-// Minding my own business. :)
-// MADE BY ITSQUASI
+//Minding my own business. :)
+//MADE BY ITSQUASI
 #include <iostream>
 #define ll long long
-#define task "example"
+#define task "cdsubseg"
 
 using namespace std;
 
-const ll arr = 1'000'006, mod = 1'000'000'007;
+const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
 int main()
 {
@@ -16,5 +16,6 @@ int main()
         freopen(task".inp", "r", stdin);
         freopen(task".out", "w", stdout);
     }
+    
     return 0;
 }
