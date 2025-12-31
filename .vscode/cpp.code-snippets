@@ -20,7 +20,6 @@
 		"body": [
 			"// Merry Christmas and Happy New Year!",
 			"// MADE BY ITSQUASI",
-			"// $CURRENT_DATE $CURRENT_MONTH $CURRENT_YEAR",
 			"#include <iostream>",
 			"#define ll long long",
 			"// #define task \"\"",
