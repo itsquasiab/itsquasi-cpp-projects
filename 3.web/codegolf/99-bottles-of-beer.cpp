@@ -1,0 +1,2 @@
+#include <iostream>
+int main(){for(int i=99;i;i--)std::cout<<i<<" bottle"<<(i-1?"s":"")<<" of beer on the wall, "<<i<<" bottle"<<(i-1?"s":"")<<" of beer.\nTake one down and pass it around, "<<(i>1?std::to_string(i-1)+" bottle"+(i>2?"s":""):"no more bottles")<<" of beer on the wall.\n\n";std::cout<<"No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.";}

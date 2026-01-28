@@ -1,14 +1,16 @@
-//Welcome to your new home, CLCer ItsQuasi!
-//MΔDE BY ITSQUΔSI
-#include <bits/stdc++.h>
+// Merry Christmas and Happy New Year!
+// MADE BY ITSQUASI
+#include <iostream>
 #define ll long long
+// #define task ""
 
 using namespace std;
 
-const int MAX = 1e6 + 6;
+const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
 int n;
-ll a[MAX], st[20][MAX];
+ll a[arr], st[22][arr];
+
 void preMin(){
     for (int i = 1; i <= n; ++i) st[0][i] = a[i];
     for (int j = 1; j <= 20; ++j)
@@ -38,7 +40,13 @@ int querySum(int l, int r) {
 
 int main()
 {
-    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
+    ios::sync_with_stdio(0), cin.tie(0);
+    /* if (fopen(task ".inp", "r"))
+    {
+        freopen(task ".inp", "r", stdin);
+        freopen(task ".out", "w", stdout);
+    } */
     cin >> n;
+    for (int i = 1; i <= n; ++i) cin >> a[i];
     return 0;
 }

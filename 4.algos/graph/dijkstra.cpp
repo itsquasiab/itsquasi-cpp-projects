@@ -9,7 +9,7 @@ using namespace std;
 const ll arr = 1e6 + 6, mod = 1e9 + 7, inf = LLONG_MAX;
 
 vector<ii> node[arr];
-ll d[arr], pre[arr];
+ll d[arr], pre[arr], cnt[arr];
 int n, m, s;
 
 void dijkstra(int s){
@@ -19,19 +19,25 @@ void dijkstra(int s){
         pre[i] = -1;
     }
     d[s] = 0;
+    cnt[s] = 1;
     pq.push({0, s});
 
     while (!pq.empty()) {
         ll du = pq.top().first;
         int u = pq.top().second;
         pq.pop();
-        if (du != d[u]) continue; // bỏ các trạng thái cũ
+        if (du != d[u]) continue; // remove old statuses
 
-        for (auto [v, w] : node[u]) {
-            if (d[v] > du + w) {
-                d[v] = du + w;
-                pre[v] = u;
+        for (auto [v, dv] : node[u]) {
+            if (d[v] > du + dv) {
+                d[v] = du + dv;
                 pq.push({d[v], v});
+                pre[v] = u; // trace path
+                cnt[v] = cnt[u]; // count how many ways
+            }
+            // if it asks how many ways, do this:
+            else if (d[v] == dv + du){
+                cnt[v] += cnt[u];
             }
         }
     }
@@ -51,7 +57,7 @@ int main()
     dijkstra(s);
     for (int i = 1; i <= n; ++i){
         if (d[i] == inf) cout << "no path to " << i << "\n";
-        else cout << s << " -> " << i << " = " << d[i] << "\n";
+        else cout << s << " -> " << i << " = " << d[i] << " (" << cnt[i] << ")\n";
     }
     /*
     vector<ll> path;

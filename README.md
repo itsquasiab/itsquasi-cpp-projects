@@ -1,7 +1,7 @@
 # ItsQuasi's C++ Projects
-Welcome to **ItsQuasi's** collection of C++ files and projects.
+All about **ItsQuasi's** collection of C++ files and projects.
 
-**Updates:** Automatically refreshed on the **last day of the month** 
+**Updates:** Every week
 
 **Progress:** Still growing.
 
@@ -12,8 +12,7 @@ Welcome to **ItsQuasi's** collection of C++ files and projects.
 - 3.web: Competitive programming on the web and online judges.
 - 4.algos: Algorithms and other stuffs.
 
-## Notes
+## Infos
 
 - Language: **C++17**  
 - Environment: **Visual Studio Code** and **MSYS2** with `g++`
-- Numbering folder for easy sorting based on priority.

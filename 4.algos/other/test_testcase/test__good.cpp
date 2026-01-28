@@ -1,61 +1,40 @@
-//Minding my own business. :)
-//MADE BY ITSQUASI
-#include <bits/stdc++.h>
+// Merry Christmas and Happy New Year!
+// MADE BY ITSQUASI
+#include <iostream>
+#include <stack>
 #define ll long long
+// #define task ""
 
 using namespace std;
 
-const ll arr = 1e5 + 6, mod = 1e9 + 7;
+const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
-int n;
 ll a[arr];
-ll st1[4 * arr], st2[4 * arr];
-
-void build(int id, int l, int r){
-    if (l == r){
-        st1[id] = a[l];
-        st2[id] = a[l];
-        return;
-    }
-    int mid = l + r >> 1;
-    build (id << 1, l, mid);
-    build (id << 1 | 1, mid + 1, r);
-    st1[id] = max(st1[id << 1], st1[id << 1 | 1]);
-    st2[id] = min(st2[id << 1], st2[id << 1 | 1]);
-}
-
-ll getmax(int id, int l, int r, int u, int v){
-    if (v < l || r < u) return LLONG_MIN;
-    if (u <= l && r <= v) return st1[id];
-    int mid = l + r >> 1;
-    return max(
-        getmax(id << 1, l, mid, u, v),
-        getmax(id << 1 | 1, mid + 1, r, u, v)
-    );
-}
-
-ll getmin(int id, int l, int r, int u, int v){
-    if (v < l || r < u) return LLONG_MAX;
-    if (u <= l && r <= v) return st2[id];
-    int mid = l + r >> 1;
-    return min(
-        getmin(id << 1, l, mid, u, v),
-        getmin(id << 1 | 1, mid + 1, r, u, v)
-    );
-}
 
 int main()
 {
     ios::sync_with_stdio(0), cin.tie(0);
+    /* if (fopen(task ".inp", "r"))
+    {
+        freopen(task ".inp", "r", stdin);
+        freopen(task ".out", "w", stdout);
+    } */
+    freopen("closest.inp", "r", stdin);
+    freopen("closest.out", "w", stdout);
+    int n;
     cin >> n;
-    for (int i = 1; i <= n; ++i) cin >> a[i];
-    build(1, 1, n);
-    ll s = 0;
+    stack<int> st;
     for (int i = 1; i <= n; ++i){
-        for (int j = i + 1; j <= n; ++j){
-            s += getmax(1, 1, n, i, j) - getmin(1, 1, n, i, j);
-        }
+        cin >> a[i];
     }
-    cout << s;
+    for (int i = 1; i <= n; ++i){
+        while (!st.empty() && a[st.top()] >= a[i]){
+            //cout << st.top() << " - ";
+            st.pop();
+        }
+        if (st.empty()) cout << 0 << " ";
+        else cout << st.top() << " ";
+        st.push(i);
+    }
     return 0;
 }

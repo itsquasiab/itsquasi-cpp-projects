@@ -8,14 +8,14 @@ vector<vector<bool>> visited;
 int dx[4] = {1, -1, 0, 0};
 int dy[4] = {0, 0, 1, -1};
 
-void dfs(int x, int y) {
+void bfs(int x, int y) {
     visited[x][y] = true;
     for (int k = 0; k < 4; k++) {
         int nx = x + dx[k];
         int ny = y + dy[k];
         if (nx >= 0 && nx < n && ny >= 0 && ny < m) {
             if (!visited[nx][ny] && grid[nx][ny] == '.') {
-                dfs(nx, ny);
+                bfs(nx, ny);
             }
         }
     }
@@ -38,7 +38,7 @@ int main() {
         for (int j = 0; j < m; j++) {
             if (grid[i][j] == '.' && !visited[i][j]) {
                 rooms++;
-                dfs(i, j);
+                bfs(i, j);
             }
         }
     }

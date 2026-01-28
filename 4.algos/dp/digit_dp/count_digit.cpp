@@ -7,7 +7,7 @@ using namespace std;
 
 const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
-ll dp[20][20][2]; //dp[pos][tight];
+ll dp[20][420][2]; //dp[pos][tight];
 string num;
 
 ll solver(int pos, ll cnt, bool tight){

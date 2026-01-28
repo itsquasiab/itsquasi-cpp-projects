@@ -1,0 +1,3 @@
+#include<iostream>
+#define c std::cout
+char*O[]={"First","Second","Third","Fourth","Fifth","Sixth","Seventh","Eighth","Ninth","Tenth","Eleventh","Twelfth"};char*G[]={"A Partridge in a Pear Tree.\n","Two Turtle Doves, and\n","Three French Hens,\n","Four Calling Birds,\n","Five Gold Rings,\n","Six Geese-a-Laying,\n","Seven Swans-a-Swimming,\n","Eight Maids-a-Milking,\n","Nine Ladies Dancing,\n","Ten Lords-a-Leaping,\n","Eleven Pipers Piping,\n","Twelve Drummers Drumming,\n"};int main(){for(int i=0;i<12;i++){c<<"On the "<<O[i]<<" day of Christmas\nMy true love sent to me\n";for(int j=i+1;j--;)c<<G[j];c<<"\n";}}

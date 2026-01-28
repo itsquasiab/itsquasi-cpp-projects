@@ -1,22 +1,26 @@
-//Minding my own business. :)
-//MADE BY ITSQUASI
+// Minding my own business. :)
+// MADE BY ITSQUASI
 #include <bits/stdc++.h>
-#define ll long long
-
 using namespace std;
 
 mt19937 rd(chrono::steady_clock::now().time_since_epoch().count());
-int example = 1 + rd() % 10;
-int n = 3;
-int m = 1 + rd() % 100;
-ll a = ((rd() % 100) + 1) * 100;
 
-int main()
-{
-    ios::sync_with_stdio(0), cin.tie(0);
-    cout << n << " " << m << "\n";
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    freopen("closest.inp", "w", stdout);
+
+    uniform_int_distribution<int> d_n(200000, 200000);
+    uniform_int_distribution<int> d_a(100000, 1000000000);
+
+    int n = d_n(rd);
+    cout << n << "\n";
     for (int i = 1; i <= n; ++i){
-        cout << ((rd() % 100) + 1) * 100 << " ";
+        int a = d_a(rd);
+        cout << a << " ";
     }
+    cout << "\n";
+
     return 0;
 }
