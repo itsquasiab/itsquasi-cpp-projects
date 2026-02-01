@@ -1,18 +1,13 @@
 # ItsQuasi's C++ Projects
-All about **ItsQuasi's** collection of C++ files and projects.
+ItsQuasi’s frequently updated C++ projects and files.
+### Contents
 
-**Updates:** Every week
+- **algos:** Every algorithm discovered.
+- **class:** Code from school and classes.
+- **online_judges:** Competitive programming solutions.
+- **others:** Custom and fun projects.
 
-**Progress:** Still growing.
-
-## Contents
-
-- 1.school: Projects and files learning in school.
-- 2.class: (Retired) Projects and files learning outside school.
-- 3.web: Competitive programming on the web and online judges.
-- 4.algos: Algorithms and other stuffs.
-
-## Infos
+### Infomations
 
 - Language: **C++17**  
-- Environment: **Visual Studio Code** and **MSYS2** with `g++`
+- Environment: **Visual Studio Code** and **MSYS2**
