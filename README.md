@@ -1,5 +1,5 @@
 # itsquasi's C++ Projects
-ItsQuasi’s frequently updated C++ projects and files.
+itsquasi’s frequently updated C++ projects and files.
 ### Contents
 
 - **algos:** Every algorithm discovered.
