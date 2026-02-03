@@ -1,4 +1,4 @@
-# ItsQuasi's C++ Projects
+# itsquasi's C++ Projects
 ItsQuasi’s frequently updated C++ projects and files.
 ### Contents
 
