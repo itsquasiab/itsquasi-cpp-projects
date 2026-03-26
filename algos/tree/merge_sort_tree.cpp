@@ -1,6 +1,5 @@
 //Minding my own business. :)
-//MΔDE BY ITSQUΔSI
-//https://itsquasi23.github.io/
+//MADE BY ITSQUASI
 #include <bits/stdc++.h>
 #define ll long long
 
