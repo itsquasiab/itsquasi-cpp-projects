@@ -15,7 +15,7 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Basic CPP Snippet": {
+	"cpp_snippet": {
 		"prefix": "cpp",
 		"body": [
 			"// Minding my own business. :)",
@@ -40,6 +40,6 @@
 			"    return 0;",
 			"}"
 		],
-		"description": "Basic CPP Snippet"
+		"description": "cpp_snippet"
 	}
 }
