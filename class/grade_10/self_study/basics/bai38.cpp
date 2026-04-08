@@ -2,7 +2,7 @@
 // MADE BY ITSQUASI
 #include <iostream>
 #define ll long long
-#define task "giaithua"
+#define task "bai38"
 
 using namespace std;
 
@@ -18,10 +18,15 @@ int main()
     }
     int n;
     cin >> n;
-    ll res = 1;
-    for (int i = 2; i <= n; ++i){
-        res *= i;
+    ll mn = 1e18, pos = 0;
+    for (int i = 1; i <= n; ++i){
+        ll a;
+        cin >> a;
+        if (a < mn){
+            mn = a;
+            pos = i;
+        }
     }
-    cout << res;
+    cout << mn << " " << pos;
     return 0;
 }

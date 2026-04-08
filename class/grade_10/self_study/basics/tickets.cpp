@@ -2,7 +2,7 @@
 // MADE BY ITSQUASI
 #include <iostream>
 #define ll long long
-#define task "sumdigits"
+#define task "tickets"
 
 using namespace std;
 
@@ -16,12 +16,12 @@ int main()
         freopen(task ".inp", "r", stdin);
         freopen(task ".out", "w", stdout);
     }
-    string n;
-    cin >> n;
-    ll sum = 0;
-    for (char c : n){
-        sum += c - '0';
+    int t;
+    cin >> t;
+    while (t--){
+        ll n, m, a, b;
+        cin >> n >> m >> a >> b;
+        cout << min(n * a, (n / m) * b + (n % m) * a) << "\n";
     }
-    cout << sum;
     return 0;
 }

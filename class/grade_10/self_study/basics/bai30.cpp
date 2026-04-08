@@ -2,7 +2,7 @@
 // MADE BY ITSQUASI
 #include <iostream>
 #define ll long long
-#define task "tongnghichdao"
+#define task "bai30"
 
 using namespace std;
 
@@ -16,12 +16,9 @@ int main()
         freopen(task ".inp", "r", stdin);
         freopen(task ".out", "w", stdout);
     }
-    long double s = 0;
-    int n;
+    ll n;
     cin >> n;
-    for (int i = 1; i <= n; ++i){
-        s += 1.0 / i;
-    }
-    cout << s;
+    if (n % 2 == 0) n--;
+    cout << (n + 1) * ((n + 1) / 2) / 2;
     return 0;
 }

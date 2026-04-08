@@ -1,8 +1,9 @@
 // Minding my own business. :)
 // MADE BY ITSQUASI
 #include <iostream>
+#include <vector>
 #define ll long long
-#define task "tongsole"
+#define task "bai41"
 
 using namespace std;
 
@@ -16,9 +17,16 @@ int main()
         freopen(task ".inp", "r", stdin);
         freopen(task ".out", "w", stdout);
     }
-    ll n;
+    int n;
     cin >> n;
-    if (n % 2 == 0) n--;
-    cout << (n + 1) * ((n + 1) / 2) / 2;
+    vector<ll> odds, evens;
+    for (int i = 1; i <= n; ++i){
+        ll a;
+        cin >> a;
+        if (a & 1) odds.push_back(a);
+        else evens.push_back(a);
+    }
+    for (ll i : evens) cout << i << " ";
+    for (ll i : odds) cout << i << " ";
     return 0;
 }
