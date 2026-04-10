@@ -1,17 +1,14 @@
 // Minding my own business. :)
 // MADE BY ITSQUASI
 #include <iostream>
-#include <vector>
 #define ll long long
-#define task "bai42"
+#define task "bai50"
 
 using namespace std;
 
 const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
-ll a[arr];
-vector<ll> num3;
-vector<ll> sum;
+ll pf[arr];
 
 int main()
 {
@@ -24,18 +21,16 @@ int main()
     int n;
     cin >> n;
     for (int i = 1; i <= n; ++i){
-        cin >> a[i];
+        ll a;
+        cin >> a;
+        pf[i] = pf[i - 1] + a;
     }
-    for (int i = 2; i <= n; ++i){
-        if (a[i] == a[i - 1] + 3)
-        num3.push_back(a[i]);
+    int q;
+    cin >> q;
+    while (q--){
+        int u, v;
+        cin >> u >> v;
+        cout << pf[v] - pf[u - 1] << "\n";
     }
-    for (int i = 2; i < n; ++i){
-        if (a[i] == a[i - 1] + a[i + 1])
-        sum.push_back(a[i]);
-    }
-    for (auto i : num3) cout << i << " ";
-    cout << "\n";
-    for (auto i : sum) cout << i << " ";
     return 0;
 }

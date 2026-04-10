@@ -1,17 +1,16 @@
 // Minding my own business. :)
 // MADE BY ITSQUASI
 #include <iostream>
-#include <vector>
+#include <unordered_map>
 #define ll long long
-#define task "bai42"
+#define task "counting1"
 
 using namespace std;
 
 const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
+unordered_map<ll, int> cnt;
 ll a[arr];
-vector<ll> num3;
-vector<ll> sum;
 
 int main()
 {
@@ -25,17 +24,10 @@ int main()
     cin >> n;
     for (int i = 1; i <= n; ++i){
         cin >> a[i];
+        cnt[a[i]]++;
     }
-    for (int i = 2; i <= n; ++i){
-        if (a[i] == a[i - 1] + 3)
-        num3.push_back(a[i]);
+    for (int i = 0; i < 100; ++i){
+        cout << cnt[i] << " ";
     }
-    for (int i = 2; i < n; ++i){
-        if (a[i] == a[i - 1] + a[i + 1])
-        sum.push_back(a[i]);
-    }
-    for (auto i : num3) cout << i << " ";
-    cout << "\n";
-    for (auto i : sum) cout << i << " ";
     return 0;
 }

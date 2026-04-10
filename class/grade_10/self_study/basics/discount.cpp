@@ -1,17 +1,15 @@
 // Minding my own business. :)
 // MADE BY ITSQUASI
 #include <iostream>
-#include <vector>
+#include <algorithm>
 #define ll long long
-#define task "bai42"
+#define task "discount"
 
 using namespace std;
 
 const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
 ll a[arr];
-vector<ll> num3;
-vector<ll> sum;
 
 int main()
 {
@@ -26,16 +24,11 @@ int main()
     for (int i = 1; i <= n; ++i){
         cin >> a[i];
     }
-    for (int i = 2; i <= n; ++i){
-        if (a[i] == a[i - 1] + 3)
-        num3.push_back(a[i]);
+    sort (a + 1, a + 1 + n, greater<ll>());
+    ll res = 0;
+    for (int i = 3; i <= n; i += 3){
+        res += a[i];
     }
-    for (int i = 2; i < n; ++i){
-        if (a[i] == a[i - 1] + a[i + 1])
-        sum.push_back(a[i]);
-    }
-    for (auto i : num3) cout << i << " ";
-    cout << "\n";
-    for (auto i : sum) cout << i << " ";
+    cout << res;
     return 0;
 }
