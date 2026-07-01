@@ -10,5 +10,5 @@ int main() {
     else if (__cplusplus == 201103L) cout << "C++11";
     else if (__cplusplus == 199711L) cout << "C++98";
     else cout << "pre-standard C++.";
-    cout << " ("__cplusplus")\n";
+    cout << " (" << __cplusplus << ")\n";
 }
