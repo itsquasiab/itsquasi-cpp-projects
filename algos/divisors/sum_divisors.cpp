@@ -27,7 +27,7 @@ ll sum_div(ll n){
             c++, n /= i;
         d *= (fastpow(i,c + 1) - 1) / (i - 1);
     }
-    if (n > 1) d *= (n * n - 1) / (n - 1);
+    if (n > 1) d *= (n + 1);
     return d;
 }
 
