@@ -9,5 +9,5 @@ itsquasi’s frequently updated C++ projects and files.
 
 ### Infomations
 
-- Language: **C++17**  
+- Language: **C++20**  
 - Environment: **Visual Studio Code** and **MSYS2**
