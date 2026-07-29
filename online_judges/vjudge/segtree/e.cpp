@@ -25,18 +25,17 @@ void build (int id, int l, int r){
 }
 
 void push(int id, int l, int r){
-    if (lazy[id] || assign[id] != -1){
-        st[id] = (st[id] * assign[id]);
-        st[id] = (st[id] + (r - l + 1) * lazy[id]);
-        if (l != r){
-            assign[id << 1] = (assign[id << 1] * assign[id]);
-            assign[id << 1 | 1] = (assign[id << 1 | 1] * assign[id]);
-            lazy[id << 1] = ((lazy[id << 1] * assign[id]) + lazy[id]);
-            lazy[id << 1 | 1] = ((lazy[id << 1 | 1] * assign[id]) + lazy[id]);
-        }
-        assign[id] = 1;
-        lazy[id] = 0;
+    if (assign[id] == 1 && lazy[id] == 0) return;
+    st[id] = (st[id] * assign[id]);
+    st[id] = (st[id] + (r - l + 1) * lazy[id]);
+    if (l != r){
+        assign[id << 1] = (assign[id << 1] * assign[id]);
+        assign[id << 1 | 1] = (assign[id << 1 | 1] * assign[id]);
+        lazy[id << 1] = ((lazy[id << 1] * assign[id]) + lazy[id]);
+        lazy[id << 1 | 1] = ((lazy[id << 1 | 1] * assign[id]) + lazy[id]);
     }
+    assign[id] = 1;
+    lazy[id] = 0;
 }
 
 void upd (int id, int l, int r, int u, int v, ll val, int type){
@@ -49,7 +48,6 @@ void upd (int id, int l, int r, int u, int v, ll val, int type){
         }
         else {
             lazy[id] = (lazy[id] + val);
-            assign[id] = 1;
         }
         push(id, l, r);
         return;
@@ -81,8 +79,8 @@ int main()
     for (int i = 1; i <= n; ++i){
         cin >> a[i];
     }
+    for (int i = 1; i <= 4 * n; ++i) assign[i] = 1, lazy[i] = 0;
     build (1, 1, n);
-    for (int i = 1; i <= 4 * n; ++i) assign[i] = -1;
     while (q--){
         int type;
         cin >> type;
