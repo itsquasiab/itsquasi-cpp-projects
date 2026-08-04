@@ -10,8 +10,6 @@ using namespace std;
 
 const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
-vector<ll> pos, pos_g;
-
 int main()
 {
     ios::sync_with_stdio(0), cin.tie(0);
@@ -23,6 +21,7 @@ int main()
     int tc;
     cin >> tc;
     while (tc--){
+        vector<ll> pos, pos_g;
         int n;
         char c;
         string a;
