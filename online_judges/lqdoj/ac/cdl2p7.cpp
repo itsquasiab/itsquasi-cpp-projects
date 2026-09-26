@@ -1,0 +1,24 @@
+// Minding my own business. :)
+// MADE BY ITSQUASI
+#include <iostream>
+#define ll long long
+#define task "cdl2p7"
+
+using namespace std;
+
+const ll arr = 1e6 + 6, mod = 1e9 + 7;
+
+int main()
+{
+    ios::sync_with_stdio(0), cin.tie(0);
+    if (fopen(task ".inp", "r"))
+    {
+        freopen(task ".inp", "r", stdin);
+        freopen(task ".out", "w", stdout);
+    }
+    ll n, m;
+    cin >> n >> m;
+    if (n % m == 0) cout << "Co\n";
+    else cout << "Khong\n";
+    return 0;
+}
