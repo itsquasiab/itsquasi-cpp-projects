@@ -15,10 +15,11 @@ void dfs_rec(int s){
     vis[s] = 1;
     
     for (int v : node[s]){
-        if (!vis[v])
+        if (!vis[v]){
             d[v] = d[s] + 1;
             par[v] = s;
             dfs_rec(v);
+        }
     }
 }
 
@@ -33,10 +34,11 @@ void dfs_stack(int s){
             vis[u] = 1;
             for (int i = node[u].size() - 1; i >= 0; --i) {
                 int v = node[u][i];
-                if (!vis[v])
+                if (!vis[v]){
                     d[v] = d[u] + 1;
                     par[v] = u;
                     st.push(v);
+                }
             }
         }
     }
