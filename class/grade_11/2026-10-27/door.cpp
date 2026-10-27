@@ -33,7 +33,7 @@ int main()
         while (nmask){
             if (nmask % 2 == 1){
                 sum += a[j];
-            }z
+            }
             nmask /= 2;
             j++;
         }
