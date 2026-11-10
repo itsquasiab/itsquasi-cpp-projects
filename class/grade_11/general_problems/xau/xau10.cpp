@@ -1,7 +1,6 @@
 // Minding my own business. :)
 // MADE BY ITSQUASI
 #include <iostream>
-#include <unordered_map>
 #define ll long long
 #define task "xau10"
 
@@ -9,7 +8,27 @@ using namespace std;
 
 const ll arr = 1e6 + 6, mod = 1e9 + 7;
 
-unordered_map<char, int> mp;
+string a;
+int k;
+
+ll p(bool x, int pos){
+    if (!x) return pos % 2;
+    return 1 - (pos % 2);
+}
+
+ll get(bool x){
+    int l = 0, r = 0, ms = 0, res = 0;
+    while (l < a.size() && r < a.size()){
+        if (a[r] - '0' != p(x, r)) ms++;
+        while (ms > k){
+            if (a[l] != p(x, l)) ms--;
+            l++;
+        }
+        res = max(res, r - l + 1);
+        r++;
+    }
+    return res;
+}
 
 int main()
 {
@@ -19,23 +38,7 @@ int main()
         freopen(task ".inp", "r", stdin);
         freopen(task ".out", "w", stdout);
     }
-    //unfinished project
-    string a;
-    int k;
     cin >> a >> k;
-    int i = 0, j = 0, res = 0, bit0 = 0, bit1 = 0;
-    while (i < a.size() && j < a.size()){
-        if (a[j] == '0') bit0++;
-        else bit1++;
-        while (abs(bit0 - bit1) > 1){
-            if (a[i] == '0') bit0--;
-            else bit1--;
-            i++;
-        }
-        cout << j - i + 1 << "\n";
-        res = max(res, j - i + 1);
-        j++;
-    }
-    cout << res + k;
+    cout << max(get(1), get(0));
     return 0;
 }
