@@ -39,7 +39,7 @@ int main()
             if (mn.size() && mn.front() == i) mn.pop_front();
             i++;
         }
-        cout << i << " " << j << " ";
+        //cout << i << " " << j << " ";
         while (sum >= s){
             cout << "valid\n";
             res++;
@@ -47,10 +47,10 @@ int main()
             if (mx.size() && mx.front() == i) mx.pop_front();
             if (mn.size() && mn.front() == i) mn.pop_front();
             i++;
-            cout << i << " " << j << " ";
+            //cout << i << " " << j << " ";
         }
         j++;
-        cout << "\n";
+        //cout << "\n";
     }
     cout << res;
     return 0;
