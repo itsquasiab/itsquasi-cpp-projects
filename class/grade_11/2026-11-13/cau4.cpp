@@ -10,7 +10,7 @@ ll a[arr];
 int n, k;
 
 ll check(ll mid){
-    ll towers = 1, radius = a[0] + mid * 2;
+    ll towers = 1, radius = a[1] + mid * 2;
     for (int i = 1; i <= n; ++i){
         if (a[i] > radius){
             radius = a[i] + mid * 2;
