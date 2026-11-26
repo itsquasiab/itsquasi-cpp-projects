@@ -19,17 +19,18 @@ int main()
     ll n;
     cin >> n;
     int cnt = 0;
-    for (int i = 1; i <= n; ++i){
-        ll sum = i;
-        for (int j = i + 1; j <= n; ++j){
-            sum += j;
-            if (sum == n){
-                cnt++;
-                break;
-            }
-            else if (sum > n) break;
+    ll l = 1, r = 2;
+    ll sum = l;
+    ll res = 0;
+    while (r < n){
+        sum += r;
+        while (sum > n){
+            sum -= l;
+            l++;            
         }
+        if (sum == n) res++;
+        r++;
     }
-    cout << cnt;
+    cout << res;
     return 0;
 }
